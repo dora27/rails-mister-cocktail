@@ -1,0 +1,7 @@
+<%= form_for [ @cocktail, @dose ] do |f| %>
+  <%= link_to cocktail.name, cocktail_path(cocktail) %>
+  <%= f.text_field :description %>
+  <%= f.select :ingredient_id, options_from_collection_for_select(Ingredient.all, 'id', 'name') %>
+  <%= f.button :submit, class: "btn btn-primary"  %>
+<% end %>
+
